@@ -1,0 +1,14 @@
+name: MEP
+on:
+  workflow_dispatch:
+    inputs:
+      environnement:
+        description: 'environnement'
+        required: true
+jobs:
+  Premier-job:
+    name: Premier job
+    runs-on: Ubuntu-latest
+    steps:
+      - run: echo ${{if($environnement == prod) {return "prod"}}}
+  
